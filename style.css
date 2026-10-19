@@ -1,0 +1,148 @@
+/* ===== 기본 설정 ===== */
+* {
+  box-sizing: border-box; /* 크기 계산을 쉽게 해 주는 설정 */
+}
+
+body {
+  margin: 0;
+  padding: 16px;
+  min-height: 100vh;
+  font-family: "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+/* ===== 앱 전체 상자 ===== */
+.app {
+  max-width: 520px;   /* 큰 화면에서도 너무 넓어지지 않게 */
+  margin: 32px auto;  /* 가운데 정렬 */
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  margin: 0 0 20px;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+/* ===== 입력창 + 추가 버튼 ===== */
+.todo-form {
+  display: flex;
+  gap: 8px;
+}
+
+.todo-form input {
+  flex: 1; /* 남는 공간을 입력창이 모두 차지 */
+  padding: 12px 14px;
+  font-size: 1rem;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  outline: none;
+}
+
+.todo-form input:focus {
+  border-color: #3b82f6;
+}
+
+.todo-form button {
+  padding: 12px 18px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background: #3b82f6;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.todo-form button:hover {
+  background: #2563eb;
+}
+
+/* ===== 남은 개수 ===== */
+.todo-count {
+  margin: 16px 0 8px;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+/* ===== 할 일 목록 ===== */
+.todo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* 체크박스를 손가락으로 누르기 쉽게 크게 */
+.todo-item input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: #3b82f6;
+}
+
+.todo-text {
+  flex: 1;
+  word-break: break-all; /* 긴 글자도 줄바꿈 */
+  font-size: 1rem;
+}
+
+/* 완료된 할 일: 줄 긋기 + 흐리게 */
+.todo-item.done .todo-text {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+.delete-button {
+  flex-shrink: 0;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  color: #ef4444;
+  background: #fef2f2;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background: #fee2e2;
+}
+
+/* ===== 빈 목록 안내 ===== */
+.empty-message {
+  margin: 24px 0 8px;
+  text-align: center;
+  color: #94a3b8;
+}
+
+/* ===== 휴대폰처럼 좁은 화면일 때 ===== */
+@media (max-width: 480px) {
+  body {
+    padding: 0;
+    background: #ffffff;
+  }
+
+  .app {
+    margin: 0;
+    min-height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 20px 16px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+}
